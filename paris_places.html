@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_afdfa0806212482af2255a1db074dcbe {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_afdfa0806212482af2255a1db074dcbe" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_afdfa0806212482af2255a1db074dcbe = L.map(
+                "map_afdfa0806212482af2255a1db074dcbe",
+                {
+                    center: [48.8566, 2.3522],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_64cdf0e5a15f5b38d241e8ee3c22e00d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_64cdf0e5a15f5b38d241e8ee3c22e00d.addTo(map_afdfa0806212482af2255a1db074dcbe);
+        
+    
+            var marker_cc5b91bfbc3c8aab96cd81b6bb1d96da = L.marker(
+                [48.8584, 2.2945],
+                {
+}
+            ).addTo(map_afdfa0806212482af2255a1db074dcbe);
+        
+    
+        var popup_6ec7741f241f60461cffcaa537e6f657 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e50d34fb5c640ca907094ff0a6b4e6d0 = $(`<div id="html_e50d34fb5c640ca907094ff0a6b4e6d0" style="width: 100.0%; height: 100.0%;">Eiffel Tower</div>`)[0];
+                popup_6ec7741f241f60461cffcaa537e6f657.setContent(html_e50d34fb5c640ca907094ff0a6b4e6d0);
+            
+        
+
+        marker_cc5b91bfbc3c8aab96cd81b6bb1d96da.bindPopup(popup_6ec7741f241f60461cffcaa537e6f657)
+        ;
+
+        
+    
+    
+            marker_cc5b91bfbc3c8aab96cd81b6bb1d96da.bindTooltip(
+                `<div>
+                     Eiffel Tower
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fe8faf923ea699bbe47636ae02d16999 = L.marker(
+                [48.8606, 2.3376],
+                {
+}
+            ).addTo(map_afdfa0806212482af2255a1db074dcbe);
+        
+    
+        var popup_3496eef9ef58c5c3dc5844fa2153b00d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51afd57902690104780d730f58700c8c = $(`<div id="html_51afd57902690104780d730f58700c8c" style="width: 100.0%; height: 100.0%;">Louvre Museum</div>`)[0];
+                popup_3496eef9ef58c5c3dc5844fa2153b00d.setContent(html_51afd57902690104780d730f58700c8c);
+            
+        
+
+        marker_fe8faf923ea699bbe47636ae02d16999.bindPopup(popup_3496eef9ef58c5c3dc5844fa2153b00d)
+        ;
+
+        
+    
+    
+            marker_fe8faf923ea699bbe47636ae02d16999.bindTooltip(
+                `<div>
+                     Louvre Museum
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d7bb1f47ad73cbe584d3b6e29e9e916c = L.marker(
+                [48.852968, 2.349902],
+                {
+}
+            ).addTo(map_afdfa0806212482af2255a1db074dcbe);
+        
+    
+        var popup_1598b608fa555d578bc94a6399e98dab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cac1f28d6cd40555aaf48fbde569ca77 = $(`<div id="html_cac1f28d6cd40555aaf48fbde569ca77" style="width: 100.0%; height: 100.0%;">Notre-Dame Cathedral</div>`)[0];
+                popup_1598b608fa555d578bc94a6399e98dab.setContent(html_cac1f28d6cd40555aaf48fbde569ca77);
+            
+        
+
+        marker_d7bb1f47ad73cbe584d3b6e29e9e916c.bindPopup(popup_1598b608fa555d578bc94a6399e98dab)
+        ;
+
+        
+    
+    
+            marker_d7bb1f47ad73cbe584d3b6e29e9e916c.bindTooltip(
+                `<div>
+                     Notre-Dame Cathedral
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_877a4b11b16b15ea2f9df65bed39a7ad = L.marker(
+                [48.8738, 2.295],
+                {
+}
+            ).addTo(map_afdfa0806212482af2255a1db074dcbe);
+        
+    
+        var popup_776bcf80de5c225ad0a2d30d399861e8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51f717c8b218d769352d20f33b8a913d = $(`<div id="html_51f717c8b218d769352d20f33b8a913d" style="width: 100.0%; height: 100.0%;">Arc de Triomphe</div>`)[0];
+                popup_776bcf80de5c225ad0a2d30d399861e8.setContent(html_51f717c8b218d769352d20f33b8a913d);
+            
+        
+
+        marker_877a4b11b16b15ea2f9df65bed39a7ad.bindPopup(popup_776bcf80de5c225ad0a2d30d399861e8)
+        ;
+
+        
+    
+    
+            marker_877a4b11b16b15ea2f9df65bed39a7ad.bindTooltip(
+                `<div>
+                     Arc de Triomphe
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6ed6cf334966f447f50e49e0634bc879 = L.marker(
+                [48.8867, 2.3431],
+                {
+}
+            ).addTo(map_afdfa0806212482af2255a1db074dcbe);
+        
+    
+        var popup_b425019bed03407ee0437ed69736f89b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_273c26d5a91fdd4591ab201a706f50a4 = $(`<div id="html_273c26d5a91fdd4591ab201a706f50a4" style="width: 100.0%; height: 100.0%;">Sacré-Cœur Basilica</div>`)[0];
+                popup_b425019bed03407ee0437ed69736f89b.setContent(html_273c26d5a91fdd4591ab201a706f50a4);
+            
+        
+
+        marker_6ed6cf334966f447f50e49e0634bc879.bindPopup(popup_b425019bed03407ee0437ed69736f89b)
+        ;
+
+        
+    
+    
+            marker_6ed6cf334966f447f50e49e0634bc879.bindTooltip(
+                `<div>
+                     Sacré-Cœur Basilica
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
