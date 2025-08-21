@@ -41,7 +41,7 @@ print(f"✅ HTML file created: {html_file}")
 def get_all_movies_html():
     try:
         df = pd.read_csv('data/movies.csv')
-        # Sortiere die Filme nach Bewertung, absteigend
+        # Sorted films according to their rating
         df_sorted = df.sort_values(by='Rating', ascending=False)
         html = "<ul>\n"
         for index, row in df_sorted.iterrows():
@@ -49,6 +49,7 @@ def get_all_movies_html():
         html += "</ul>"
         return html
     except FileNotFoundError:
-        return "<p>Fehler: data/movies.csv nicht gefunden!</p>"
+        return "<p>error: data/movies.csv cannot find!</p>"
 if __name__ == '__main__':
     print(get_all_movies_html())
+
