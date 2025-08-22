@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 30px 30px 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+        h1, h2, h3, label, p {
+            color: #333;
+        }
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0 16px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background: #0099cc;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background: #0077aa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BMI Calculator</h1>
+        <form method="post">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" step="0.1" required>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" step="0.1" required>
+            <input type="submit" value="Calculate BMI">
+        </form>
+        {% if bmi is not none %}
+            <h2>Your BMI: {{ bmi }}</h2>
+            <h3>Category: {{ category }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
