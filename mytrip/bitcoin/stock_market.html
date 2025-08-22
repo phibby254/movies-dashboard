@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitcoin Market Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f8f9fa; }
+    #chart { height: 500px; }
+    .stats { margin-top: 20px; }
+    .card { border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h1 class="text-center mb-4">📈 Bitcoin Market Dashboard</h1>
+
+    <!-- TradingView Widget -->
+    <div class="card p-3 mb-4">
+      <div id="chart"></div>
+    </div>
+
+    <!-- Bitcoin Stats -->
+    <div class="row stats text-center">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Current Price (USD)</h5>
+          <p id="btc-price" class="fw-bold fs-4 text-success">Loading...</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>24h Change</h5>
+          <p id="btc-change" class="fw-bold fs-4">Loading...</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>Market Cap</h5>
+          <p id="btc-marketcap" class="fw-bold fs-4">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TradingView Chart Script -->
+  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+  <script>
+    new TradingView.widget({
+      "container_id": "chart",
+      "autosize": true,
+      "symbol": "BINANCE:BTCUSDT",
+      "interval": "60",
+      "timezone": "Etc/UTC",
+      "theme": "light",
+      "style": "1",
+      "locale": "en",
+      "toolbar_bg": "#f1f3f6",
+      "enable_publishing": false,
+      "hide_legend": false,
+      "save_image": false,
+      "studies": ["MACD@tv-basicstudies"]
+    });
+  </script>
+
+  <!-- CoinGecko API for live BTC data -->
+  <script>
+    async function loadBTC() {
+      try {
+        let response = await fetch("https://api.coingecko.com/api/v3/coins/bitcoin");
+        let data = await response.json();
+
+        let price = data.market_data.current_price.usd.toLocaleString();
+        let change = data.market_data.price_change_percentage_24h.toFixed(2);
+        let marketcap = "$" + (data.market_data.market_cap.usd/1e9).toFixed(2) + " B";
+
+        document.getElementById("btc-price").innerText = "$" + price;
+        document.getElementById("btc-change").innerText = change + "%";
+        document.getElementById("btc-change").style.color = change >= 0 ? "green" : "red";
+        document.getElementById("btc-marketcap").innerText = marketcap;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    loadBTC();
+    setInterval(loadBTC, 60000); // refresh every 1 min
+  </script>
+</body>
+</html>
