@@ -1,4 +1,20 @@
+import sys
+import os
 import requests
+
+# Add the parent folder (mytrip) to Python's path
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
+from paris_business_deals import get_deals
+
+print("Bitcoin price checker running...")
+
+# Example: show the deals
+deals = get_deals()
+print("💼 Paris Business Deals:")
+for d in deals:
+    print("-", d)
+
 
 def get_bitcoin_price():
     url = "https://api.coingecko.com/api/v3/simple/price"
